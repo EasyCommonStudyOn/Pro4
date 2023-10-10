@@ -5,7 +5,7 @@ DEBUG = False
 ADMINS = [
     ('Herr M', 'email@mydomain.com'),
 ]
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.educaproject.com']
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -22,3 +22,8 @@ CACHES['default']['LOCATION'] = REDIS_URL
 CHANNEL_LAYERS['default']['CONFIG']['hosts'] = [REDIS_URL]
 
 ALLOWED_HOSTS = ['educaproject.com', 'www.educaproject.com']
+
+# Безопасность
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT = True
